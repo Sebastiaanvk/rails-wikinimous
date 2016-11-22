@@ -8,14 +8,11 @@
 
 require "faker"
 
-
-Article.create(title: 'Coño', content: 'blahablhabalahabbalasi dbdsakfjhaslk dklajshdf jkasdfbl kljashfksbd lkbflkjbak')
-
-
+Article.destroy_all
 
 10.times do
   article  = Article.create(
-    title: Faker::Name.title,
-    content: Faker::Lorem.paragraph
+    title: Faker::Hipster.sentence,
+    content: Faker::Hipster.paragraphs(3).join
   )
 end
