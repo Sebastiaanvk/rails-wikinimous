@@ -13,6 +13,6 @@ Article.destroy_all
 10.times do
   article  = Article.create(
     title: Faker::Hipster.sentence,
-    content: Faker::Hipster.paragraphs(3).join
+    content: Faker::Hipster.paragraphs(3).join.gsub(/(\+1)/, '')
   )
 end
